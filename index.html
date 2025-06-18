@@ -1,306 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mi Proyecto Web</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-        <style>
-        body {
-            padding-top: 56px;
-            background-color: #083b6e;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .breakpoint-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1030;
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-        
-        .container-section {
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-            background: white;
-        }
-        
-        .size-box {
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .size-box:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        }
-        
-        .info-card {
-            height: 100%;
-            padding: 15px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-        
-        .breakpoint-title {
-            position: relative;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            border-bottom: 3px solid;
-        }
-        
-        .breakpoint-title::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: currentColor;
-        }
-        
-        .xs-color { background-color: #0d6efd; } /* Azul */
-        .sm-color { background-color: #6610f2; } /* Púrpura */
-        .md-color { background-color: #d63384; } /* Rosa */
-        .lg-color { background-color: #dc3545; } /* Rojo */
-        .xl-color { background-color: #fd7e14; } /* Naranja */
-        .xxl-color { background-color: #198754; } /* Verde */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil con Foto Centrada</title>
+
+  <!-- Bootstrap local -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- FontAwesome (icono temporal) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Tu hoja de estilos final -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Indicador de breakpoint actual -->
-    <div class="breakpoint-indicator" id="breakpointIndicator">
-        Tamaño de pantalla actual: <span id="currentBreakpoint">XS</span>
+  <!-- Portada a todo ancho -->
+  <div class="cover-photo">
+    <div class="cover-overlay">
+      <h1 class="cover-text">Perfil con Foto Centrada</h1>
     </div>
-    
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Breakpoints Bootstrap</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#info">Información</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#grid">Sistema Grid</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#utilities">Utilidades</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="container mt-5 pt-4">
-        <!-- Sección de información -->
-        <section id="info" class="container-section">
-            <h1 class="text-center mb-4">Breakpoints de Bootstrap</h1>
-            <p class="lead text-center mb-4">
-                Bootstrap utiliza breakpoints para crear diseños responsivos adaptados a diferentes dispositivos.
-            </p>
-            
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="info-card">
-                        <h3 class="breakpoint-title text-primary">¿Qué son los breakpoints?</h3>
-                        <p>Los breakpoints son puntos específicos donde el diseño de tu sitio web se adapta para proporcionar la mejor experiencia de usuario en diferentes tamaños de pantalla.</p>
-                        <p>Bootstrap utiliza 6 breakpoints predeterminados:</p>
-                        <ul>
-                            <li><strong>XS</strong> - Extra pequeño (menos de 576px)</li>
-                            <li><strong>SM</strong> - Pequeño (≥576px)</li>
-                            <li><strong>MD</strong> - Mediano (≥768px)</li>
-                            <li><strong>LG</strong> - Grande (≥992px)</li>
-                            <li><strong>XL</strong> - Extra grande (≥1200px)</li>
-                            <li><strong>XXL</strong> - Extra extra grande (≥1400px)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 mb-4">
-                    <div class="info-card">
-                        <h3 class="breakpoint-title text-primary">Cómo funcionan</h3>
-                        <p>Los breakpoints en Bootstrap se basan en un enfoque <strong>mobile-first</strong>. Esto significa:</p>
-                        <ol>
-                            <li>Diseñas primero para dispositivos móviles (XS)</li>
-                            <li>Luego agregas estilos para tamaños de pantalla más grandes usando clases como <code>sm</code>, <code>md</code>, <code>lg</code>, etc.</li>
-                        </ol>
-                        <p>Por ejemplo, <code>col-md-6</code> significa:</p>
-                        <ul>
-                            <li>En pantallas MD y superiores: 6 columnas (50% del ancho)</li>
-                            <li>En pantallas menores que MD: 12 columnas (100% del ancho)</li>
-                        </ul>
-                        <div class="alert alert-info mt-3">
-                            <strong>Prueba a cambiar el tamaño de tu ventana</strong> para ver cómo cambian los colores y el layout.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Visualización de breakpoints con colores -->
-        <section class="container-section mt-5">
-            <h2 class="text-center mb-4">Visualización de Breakpoints</h2>
-            <p class="text-center mb-4">Cada breakpoint tiene un color asociado. El indicador superior cambiará según el tamaño actual de tu pantalla.</p>
-            
-            <div class="row">
-                <div class="col-sm-6 col-lg-4 col-xxl-2 mb-4">
-                    <div class="size-box xs-color">
-                        XS: &lt;576px
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xxl-2 mb-4">
-                    <div class="size-box sm-color">
-                        SM: ≥576px
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xxl-2 mb-4">
-                    <div class="size-box md-color">
-                        MD: ≥768px
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xxl-2 mb-4">
-                    <div class="size-box lg-color">
-                        LG: ≥992px
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xxl-2 mb-4">
-                    <div class="size-box xl-color">
-                        XL: ≥1200px
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xxl-2 mb-4">
-                    <div class="size-box xxl-color">
-                        XXL: ≥1400px
-                    </div>
-                </div>
-            </div>
-            
-            <div class="alert alert-warning text-center">
-                Observa cómo las cajas de colores se reorganizan al cambiar el tamaño de la pantalla gracias al sistema grid de Bootstrap.
-            </div>
-        </section>
-        
-        <!-- Ejemplos de clases responsivas -->
-        <section id="utilities" class="container-section mt-5">
-            <h2 class="text-center mb-4">Utilidades Responsivas</h2>
-            <p class="text-center mb-4">Bootstrap ofrece clases responsivas para controlar la visibilidad, márgenes, padding y más.</p>
-            
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="info-card">
-                        <h3 class="breakpoint-title text-primary">Visibilidad</h3>
-                        <p>Puedes mostrar u ocultar elementos en diferentes breakpoints:</p>
-                        <ul>
-                            <li><code>.d-none .d-md-block</code> - Oculta en móvil, muestra en MD+</li>
-                            <li><code>.d-lg-none</code> - Oculta en LG+</li>
-                            <li><code>.d-print-block</code> - Solo para impresión</li>
-                        </ul>
-                        <div class="d-none d-md-block p-2 bg-success text-white text-center mt-3">
-                            Visible solo en pantallas MD y superiores
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="info-card">
-                        <h3 class="breakpoint-title text-primary">Márgenes y Padding</h3>
-                        <p>Controla márgenes y padding según el breakpoint:</p>
-                        <ul>
-                            <li><code>.mt-3 .mt-md-5</code> - Margen top 1rem en móvil, 3rem en MD+</li>
-                            <li><code>.px-sm-2 .px-lg-5</code> - Padding horizontal</li>
-                            <li><code>.mx-auto .mx-lg-0</code> - Margen horizontal</li>
-                        </ul>
-                        <div class="p-2 p-md-4 bg-info text-white text-center mt-3">
-                            Padding diferente según tamaño
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="info-card">
-                        <h3 class="breakpoint-title text-primary">Texto</h3>
-                        <p>Clases responsivas para texto:</p>
-                        <ul>
-                            <li><code>.text-center .text-md-start</code> - Centrado en móvil, izquierda en MD+</li>
-                            <li><code>.fs-4 .fs-md-2</code> - Tamaño de fuente adaptable</li>
-                            <li><code>.fw-bold .fw-md-normal</code> - Peso de fuente adaptable</li>
-                        </ul>
-                        <div class="text-center text-md-end bg-warning p-2 mt-3">
-                            Texto adaptable
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Footer -->
-        <footer class="bg-dark text-white py-4 mt-5 text-center">
-            <div class="container">
-                <p class="mb-0">Breakpoints de Bootstrap - Explicación Visual</p>
-                <p class="text-muted">Intenta cambiar el tamaño de la ventana para ver los breakpoints en acción</p>
-            </div>
-        </footer>
+  </div>
+
+  <!-- Foto de perfil centrada -->
+  <div class="profile-picture-container">
+    <div class="profile-picture">
+      <!-- Cambia por <img src="tu-foto.jpg"> si ya la tienes -->
+      <i class="fas fa-user"></i>
     </div>
+  </div>
 
-<!-- sm, md, lg, xl, xxl -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+  <!-- Nombre debajo -->
+  <h2 class="profile-name">Elmer Tc</h2>
 
-
-    <script>
-        // Actualizar el indicador de breakpoint según el tamaño de la pantalla
-        function updateBreakpointIndicator() {
-            const width = window.innerWidth;
-            let breakpoint = 'XS';
-            let colorClass = 'bg-primary'; // XS
-            
-            if (width >= 1400) {
-                breakpoint = 'XXL';
-                colorClass = 'bg-success'; // Verde
-            } else if (width >= 1200) {
-                breakpoint = 'XL';
-                colorClass = 'bg-warning'; // Naranja
-            } else if (width >= 992) {
-                breakpoint = 'LG';
-                colorClass = 'bg-danger'; // Rojo
-            } else if (width >= 768) {
-                breakpoint = 'MD';
-                colorClass = 'bg-info'; // Rosa
-            } else if (width >= 576) {
-                breakpoint = 'SM';
-                colorClass = 'bg-secondary'; // Púrpura
-            }
-            
-            document.getElementById('currentBreakpoint').textContent = breakpoint;
-            document.getElementById('breakpointIndicator').className = `breakpoint-indicator ${colorClass}`;
-        }
-        
-        // Ejecutar al cargar y al cambiar el tamaño de la ventana
-        window.addEventListener('load', updateBreakpointIndicator);
-        window.addEventListener('resize', updateBreakpointIndicator);
-    </script>    
+  <!-- Bootstrap bundle local -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- Ciclo de colores de la portada -->
+  <script src="js/script.js"></script>
 </body>
 </html>

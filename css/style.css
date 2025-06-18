@@ -1,0 +1,162 @@
+/* ────────── VARIABLES (paleta editable) ────────── */
+:root{
+  --primary:        #3498db;
+  --primary-alt:    #1abc9c;
+  --secondary:      #e74c3c;
+  --secondary-alt:  #e67e22;
+  --bg-cover-fade:  rgba(0,0,0,.6);
+  --text-dark:      #2c3e50;
+  --white:          #ffffff;
+}
+
+/* ──────────────────────────────
+   RESET rápido + cinturón y tirantes
+──────────────────────────────── */
+*{                     /* borro márgenes/paddings nativos y activo border-box */
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  overflow-x:hidden;   /* evita scrollbar lateral si algo se pasa del ancho */
+}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  min-height:100vh;    /* cuerpo al menos del alto de la ventana */
+  background:var(--white);
+}
+
+/* ──────────────────────────────
+   PORTADA (cover-photo)
+──────────────────────────────── */
+.cover-photo{
+  width:100%;          /* 100 % reales, sin contar scrollbar (no 100vw) */
+  height:320px;        /* alto fijo: ajusta a gusto */
+  background:linear-gradient(45deg,var(--primary),var(--primary-alt));
+  position:relative;   /* para ubicar el overlay absoluto dentro */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;     /* recorta lo que sobresalga */
+}
+
+/* Capa oscura sobre la portada */
+.cover-overlay{
+  position:absolute;
+  inset:0;             /* top/right/bottom/left = 0 => ocupa todo */
+  background:linear-gradient(
+              to bottom,
+              rgba(0,0,0,.1),    /* ligero oscurecido arriba */
+              var(--bg-cover-fade)  /* más oscuro abajo */
+            );
+  display:flex;
+  justify-content:center;
+  align-items:center;  /* centra el texto */
+}
+
+.cover-text{
+  color:var(--white);
+  font-size:2.3rem;
+  font-weight:700;
+  text-shadow:0 2px 10px rgba(0,0,0,.3);  /* resalta sobre fondo claro/oscuro */
+}
+
+/* ──────────────────────────────
+   FOTO DE PERFIL centrada
+──────────────────────────────── */
+.profile-picture-container{
+  position:absolute;   /* sale del flujo para solaparse sobre la portada */
+  top:240px;           /* 240 ≈ portada(320) - mitad(foto) - margen */
+  left:50%;            /* truco centrar con translateX(-50%) */
+  transform:translateX(-50%);
+  width:180px;         /* mismo ancho/alto que la foto */
+  animation:float 4s ease-in-out infinite;  /* “flota” suavemente */
+  z-index:10;          /* por encima de la portada */
+}
+
+/* Círculo real de la foto (icono provisional) */
+.profile-picture{
+  width:100%;          /* 180px heredado */
+  height:180px;
+  border-radius:50%;   /* círculo */
+  border:7px solid var(--white); /* borde blanco */
+  background:linear-gradient(45deg,var(--secondary),var(--secondary-alt));
+  box-shadow:0 5px 25px rgba(0,0,0,.4);    /* profundidad */
+  display:flex;
+  justify-content:center;
+  align-items:center;  /* coloca icono/foto al centro */
+  font-size:4rem;      /* tamaño del icono */
+  color:var(--white);
+  overflow:hidden;     /* recorta cuando uses <img> */
+}
+
+/* Si usas imagen */
+.profile-picture img{
+  width:100%;
+  height:100%;
+  object-fit:cover;    /* cubre sin deformar */
+  border-radius:50%;
+}
+
+/* ──────────────────────────────
+   NOMBRE debajo de la foto
+──────────────────────────────── */
+.profile-name{
+  margin-top:130px;    /* distancia para compensar la superposición */
+  text-align:center;
+  font-size:2.2rem;
+  font-weight:700;
+  color:var(--text-dark);
+}
+/* Nombre oculto por defecto (pantallas grandes) */
+.profile-name{
+  display:none;
+}
+
+/* ──────────────────────────────
+   ANIMACIONES
+──────────────────────────────── */
+@keyframes float{
+  /* Mueve 10 px arriba y abajo, manteniendo X centrado */
+  0%  {transform:translateX(-50%) translateY(0);}
+  50% {transform:translateX(-50%) translateY(-10px);}
+  100%{transform:translateX(-50%) translateY(0);}
+}
+
+/* Variante solo vertical para móvil (X ya está centrado) */
+@keyframes floatY{
+  0%  {transform:translateY(0);}
+  50% {transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* ──────────────────────────────
+   RESPONSIVE (≤ 650 px ≈ móviles)
+──────────────────────────────── */
+@media (max-width:650px){
+
+  /* Ocultamos portada y texto para simplificar */
+  .cover-photo,
+  .cover-text{
+    display:none !important;/* ocultamos portada y texto */
+  }
+  .profile-name{
+    display:block;
+  }
+
+  /* Re-ubicamos la foto dentro del flujo normal */
+  .profile-picture-container{
+    position:static;     /* vuelve a fluir */
+    transform:none;      /* sin translateX */
+    margin:35px auto 0;  /* auto = centrado horizontal */
+    animation:floatY 4s ease-in-out infinite; /* sigue flotando */
+  }
+
+  /* Ajustamos el nombre */
+  .profile-name{
+    margin-top:35px;
+    font-size:1.6rem;
+  }
+}
