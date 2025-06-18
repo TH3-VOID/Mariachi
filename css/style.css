@@ -21,13 +21,20 @@
 html,body{
   overflow-x:hidden;   /* evita scrollbar lateral si algo se pasa del ancho */
 }
+body,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+}
 
 body{
   font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
   min-height:100vh;    /* cuerpo al menos del alto de la ventana */
   background:var(--white);
 }
-
+body,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+}
 /* ──────────────────────────────
    PORTADA (cover-photo)
 ──────────────────────────────── */

@@ -1,40 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perfil con Foto Centrada</title>
-
-  <!-- Bootstrap local -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- FontAwesome (icono temporal) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Tu hoja de estilos final -->
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil con Foto Centrada</title>
+    <!-- Bootstrap local -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- FontAwesome (icono temporal) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fuentes Google (Oswald variable) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Portada a todo ancho -->
-  <div class="cover-photo">
-    <div class="cover-overlay">
-      <h1 class="cover-text">Perfil con Foto Centrada</h1>
+<!-- SECCION DE BIENVENIDA -->
+    <!-- Portada a todo ancho -->
+    <div class="cover-photo">
+        <div class="cover-overlay">
+        <h1 class="cover-text">Perfil con Foto Centrada</h1>
+        </div>
     </div>
-  </div>
-
-  <!-- Foto de perfil centrada -->
-  <div class="profile-picture-container">
-    <div class="profile-picture">
-      <!-- Cambia por <img src="tu-foto.jpg"> si ya la tienes -->
-      <i class="fas fa-user"></i>
+    <!-- Foto de perfil centrada -->
+    <div class="profile-picture-container">
+        <div class="profile-picture">
+        <!-- Cambia por <img src="tu-foto.jpg"> si ya la tienes -->
+        <i class="fas fa-user"></i>
+        </div>
     </div>
-  </div>
+    <!-- Nombre debajo -->
+    <h2 class="profile-name">Elmer Tc</h2>
 
-  <!-- Nombre debajo -->
-  <h2 class="profile-name">Elmer Tc</h2>
+    <!-- SECCION DE DESCRIOCION -->
+    <section id="about" class="py-5 bg-dark text-light mt-5">
+        <div class="container">
+
+            <!-- Título central -->
+            <h2 class="text-center fw-bold display-5 text-uppercase ls-wider mb-2">
+            Quiénes Somos
+            </h2>
+
+            <!-- Sub-título -->
+            <p class="text-center fw-bold text-warning mb-5">
+            El Mariachi ideal para&nbsp;la CDMX y de Edo. Méx.
+            </p>
+
+            <!-- Fila Bootstrap: imagen + texto -->
+            <div class="row g-4 align-items-start">
+
+                <!-- Columna imagen (flex en móviles, 5/12 en md+) -->
+                <div class="col-12 col-md-5">
+                    <img src="https://blog.foto24.com/wp-content/uploads/2019/02/5-fotografias-Luis-Cajete-758x1134.jpg"
+                        alt="Mariachi"
+                        class="img-fluid rounded-1 w-100 shadow">
+                </div>
+
+                <!-- Columna texto (7/12 en md+) -->
+                <div class="col-12 col-md-7">
+                    <p class="mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae vehicula elit, a gravida orci. 
+                    Curabitur et malesuada leo. Donec a nibh vitae urna accumsan varius. Suspendisse pulvinar molestie 
+                    ex, non convallis arcu pellentesque in.
+                    </p>
+                    <p class="mb-4">
+                    Nullam porttitor ligula sed turpis finibus, nec elementum tortor sollicitudin. Morbi gravida, mauris 
+                    a iaculis tincidunt, est nibh fringilla augue, nec scelerisque lorem sem quis tellus.
+                    </p>
+                    <p class="fw-bold text-warning mb-3">
+                    Llama o envía WhatsApp: 55 4500 0542 y vive el Mariachi.
+                    </p>
+                    <p class="mb-0">
+                    No olvides compartir nuestra página <br>
+                    <span class="text-secondary">www.mariachieconomicocdmx.com</span>
+                    </p>
+                </div>
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>
+
+
 
   <!-- Bootstrap bundle local -->
   <script src="js/bootstrap.bundle.min.js"></script>
-  <!-- Ciclo de colores de la portada -->
   <script src="js/script.js"></script>
 </body>
 </html>
