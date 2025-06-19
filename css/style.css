@@ -212,3 +212,150 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* ──────────────────────────────
+        CAMBIOS CHEMAAAA
+──────────────────────────────── */
+
+
+/* ──────────────────────────────
+        TARJETAS SERVICIOS
+──────────────────────────────── */
+
+.flip-card {
+  margin: 20px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 380px;
+  min-height: 300px;
+  height: auto;
+  background-color: #000000;
+  background-image: url("../assets/img/xvImage.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.flip-card:nth-of-type(2) .flip-card-front,
+.flip-card:nth-of-type(2) .flip-card-back {
+  background-image: url("../assets/img/boda.png");
+}
+
+.flip-card:nth-of-type(3) .flip-card-front,
+.flip-card:nth-of-type(3) .flip-card-back {
+  background-image: url("../assets/img/serenata.png");
+}
+
+.flip-card:nth-of-type(4) .flip-card-front,
+.flip-card:nth-of-type(4) .flip-card-back {
+  background-image: url("../assets/img/mariachi.png");
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front::after,
+.flip-card-back::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+
+.flip-card-front .inner,
+.flip-card-back .inner {
+  width: 100%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateZ(60px) scale(0.94);
+  z-index: 2;
+}
+
+.inner .icon {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.tarjetaText1 {
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 70px;
+  text-transform: capitalize;
+}
+
+.tarjetaText2{
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 70px;
+  text-transform: capitalize;
+}
+
+.cardParagraph {
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 28px;
+}
+
+.flip-card:hover .flip-card-front {
+  transform: rotateY(-180deg);
+}
+
+.flip-card:hover .flip-card-back {
+  transform: rotateY(0deg);
+}
+
+.cardcontainer{
+  margin: 0;
+  padding: 20px;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.titleServicios{
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.iconMini {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+li{
+  font-size: 18px;
+}
